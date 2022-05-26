@@ -1,18 +1,23 @@
 #Quantidade de vezes que vai rodar Fibonacci
 Qnt = int(input("Digite a quantidade de vezes para calculo do Fibonacci : "))
 
-#contar as vezes
-contador = 0
+#contar as vezes que rodou
+contador = 1
 
-#variaveis inicial
-x = 0
-y = 1
+#variaveis inicial para calcular fibonacci
+Primeironum = 0
+Segundonum = 1
 
-print(x)
-#print(y)
+#imprimir as primeiras variaveis
+print( Primeironum)
+print( Segundonum )
 
+#calcular o fibonacci
 while (contador < Qnt):
-    x = y + x
-    print(x)
+    Soma = Primeironum + Segundonum
+    Primeironum = Segundonum
+    Segundonum = Soma
+    print(Soma)
     contador += 1
+
 
