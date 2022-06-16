@@ -34,8 +34,9 @@ posicao_dos_pinos = {
 }
 
 #print(pinos)
-while pinos != " ":
-    Pista()
-    Pinos_Disponiveis()
-
-#print(input(index("Quais numero vai derrubar: "))
+while True:
+    if "I" in pinos:
+        Pista()
+        Pinos_Disponiveis()
+    else:
+        print("Jogo encerrado")
