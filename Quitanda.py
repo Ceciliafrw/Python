@@ -1,3 +1,11 @@
+global lista_valor_total
+lista_valor_total = []
+
+global lista_fruta
+lista_fruta = []
+
+global lista_valor_unit
+lista_valor_unit = []
 
 def quitanda():
     global compra
@@ -24,10 +32,6 @@ def quitanda():
             "Banana" : 5,
             "Morango" : 25,
             }
-
-    lista_valor_total = []
-    lista_fruta = []
-    lista_valor_unit = []
             #imprimindo layout de menu das frutas, quantidade e valor unitário
     print(" Fruta       Qnt Disp      Valor Unit" )
     for fruta_lista in quitanda_fruta.keys():
@@ -78,12 +82,26 @@ def Fechando_a_venda() :
                 2 - Dinheiro
                 3 - Pix""")
     forma_pgto = int(input("Qual será a forma de pagamento? (escolha o numero correspondente): "))
-    if forma_pgto == 2:
+
+    if forma_pgto == 1:
+        parcelamento = input("Deseja parcelar? S/N: ").upper()
+    if parcelamento == "S":
+        qnt_parcelas = input("Em quantas vezes deseja parcelar? ")
+        valor_parcela = qnt_parcelas/valor_total_orc
+        print(f"Seu parcelamento ficou R$ {valor_parcela},00 em {qnt_parcelas} ")
+        print("Obrigada pela preferência {}. \n Volte Sempre".format(fregues))
+    elif forma_pgto == 2:
         valor_pago = int(input("Valor entregue R$? "))
         troco = valor_pago - valor_total_orc
-        print("Seu troco é R$ {},00\n Obrigada pela preferência {}. \n Volte Sempre".format(troco, fregues)) 
+        cedulas_disp = [50, 20, 10, 5, 2]
+
+        for dinheiro in cedulas_disp:
+            if troco > dinheiro:
+                diferenca =  dinheiro - troco
+            print("Seu troco é R$ {},00\n Obrigada pela preferência {}. \n Volte Sempre".format(troco, fregues)) 
     else:
-         print("Obrigada pela preferência {}. \n Volte Sempre".format(fregues)) 
+        print("Nosso pix é quitandasualinda@quitandapytonica.com.br")
+        print("Obrigada pela preferência {}. \n Volte Sempre".format(fregues)) 
 
             
 
