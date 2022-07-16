@@ -7,21 +7,21 @@ def quitanda():
     quitanda_fruta = {
             "Laranja": "Laranja",
             "Melancia": "Melancia",
-            "Melão": "Melão",
+            "Banana": "Banana",
             "Morango": "Morango",
             }      
             #Valor das frutas de acordo com o indice das frutas
     quitanda_valor = {
             "Laranja" : 2,
             "Melancia" : 10,
-            "Melão" : 5,
+            "Banana" : 5,
             "Morango" : 3,
             }
             #Quantidade das frutas de acordo com o indice das frutas
     quitanda_qnt = {
             "Laranja" : 15,
             "Melancia" : 5,
-            "Melão" : 5,
+            "Banana" : 5,
             "Morango" : 25,
             }
 
@@ -55,7 +55,7 @@ def quitanda():
             #guardando o valor total por fruta (para calculo do valor total)
                 lista_valor_total.append(valor_total_unit)
             #imprimindo para o cliente a fruta, valor unitario e valor total por fruta
-               print("\n{} - R$  {},00 = {} ".format(fruta_orc,valor_unit,valor_total_unit))
+                print("\nQnt {} - {} - R$  {},00 = {} ".format(valor_orc,fruta_orc,valor_unit,valor_total_unit))
                 
                         #imprimindo o valor total do orçamento
             valor_total_orc = 0
@@ -64,10 +64,8 @@ def quitanda():
                 for frutas in lista_fruta:
                     for valor_orc in lista_valor_unit:
                         #print("{} - R$ {},00".format(frutas, valor_orc))
-                        
-            
-                print("Total orçado = R$ {}\n".format( valor_total_orc))
-                return fruta, valor_total_orc
+                        print("Total orçado = R$ {}\n".format( valor_total_orc))
+            return fruta, valor_total_orc
 
                 
 def Fechando_a_venda() :
