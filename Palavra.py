@@ -7,10 +7,11 @@
 
 
 #passando o nome do arquivo que deseja que seja aberto
-filename = 'nome.txt'
+filename = 'todaspalavras.txt'
 #lendo um arquivo
-with open(filename,'r') as xponteiro:
+with open(filename,'r', encoding='utf-8') as xponteiro:
     #imprimindo os dados do arquivo
     for linha in xponteiro:
+        todaspalavras.append(linha.strip())
         #strip para eliminar o \n ao imprimir
-        print(linha.strip())
+        print(len(todaspalavras))
