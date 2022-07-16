@@ -8,10 +8,14 @@
 
 #passando o nome do arquivo que deseja que seja aberto
 filename = 'todaspalavras.txt'
+contar = []
 #lendo um arquivo
-with open(filename,'r', encoding='utf-8') as xponteiro:
+with open(filename,'r', encoding='utf-8') as arquivo:
     #imprimindo os dados do arquivo
-    for linha in xponteiro:
-        todaspalavras.append(linha.strip())
-        #strip para eliminar o \n ao imprimir
-        print(len(todaspalavras))
+    for palavra in arquivo:
+        contar.append(palavra.strip())
+
+print("Eu consegui contar as", len(contar), "palavras via Python")
+
+    if palavra  "C":
+        palavra.append(palavra.strip())
