@@ -13,14 +13,18 @@ def Pinos_Disponiveis():
     
     lista = []
     print("Sua pista de boliche tem de 0 a 34 possiveis jogadas")
+    # Concorda que é um pouco estranho ter 10 pinos, mas 34 possíveis jogadas?
+    # O que daria pra fazer é oferecer apenas 10 jogadas, que correspondem aos 10 pinos. Aí ali embaixo você adapta a lógica
     valores = input("Quais pinos quer derrubar (separe por virgula (',')): ")
-    lista = valores.split(",")
+    lista = valores.split(",") # Sensacional o uso desse split, parabéns! Ótima ideia!
     #print(totallugares)
-    for y in lista:
-        x = int(y)
-        if x  not in listajogada:
-            if(x >= 0 and x <= 34):
-                pinos[x] = " "
+    for pino in lista:  # tente usar variáveis com nomes esclarecedores
+        if pino  not in listajogada:
+            # No lugar desse if você poderia fazer assim
+            posicao = posicao_dos_pinos[pino]  # Isso vai te dar o index de onde está o pino "x" dentro da lista que corresponde à pista
+            pinos[posicao] = " "  # Isso derruba apenas a posição do pino
+            # O seu código estava quase 100%. O problema é que ó jogador poderia alterar outras partes da pista que não são pinos.
+            # Por exemplo, experimente derrubar a posicao 9 no código anterior... A pista fica desalinhada
 
 #imprimindo a pista com os pinos em forma triangular
 def Pista():
@@ -38,10 +42,10 @@ pinos = [" ","9"," ","9"," ","9"," ","9"," ","\n ",
 
 #numero da posição dos pinos na pista
 posicao_dos_pinos = {
-'1' : 1, '5' : 13,
-'2' : 3, '6' : 15,
-'3' : 5, '7' : 22,
-'4' : 7, '8' : 24,
+'1' : 1, '6' : 13, # Há dois pinos 5
+'2' : 3, '7' : 15,
+'3' : 5, '8' : 22,
+'4' : 7, '9' : 24,
 '5' : 11, '10' :34,
 }
 
@@ -53,7 +57,7 @@ while True:
     if "9" in pinos:
         Pista()
         Pinos_Disponiveis()
-        contador = contador + 1 
+        contador = contador + 1 # Muito boa a ideia de contar jogadas!
     else:
         print("\n\nJogo encerrado")
         print(f"Voce fez {contador} jogadas")
