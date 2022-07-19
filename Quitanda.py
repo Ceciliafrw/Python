@@ -88,8 +88,8 @@ def fechando_a_venda(total_compra) :
     if forma_pgto == 1:
         parcelamento = input("Deseja parcelar? S/N: ").upper()
         if parcelamento == "S":
-            qnt_parcelas = input("Em quantas vezes deseja parcelar? ")
-            valor_parcela = qnt_parcelas/total_compra
+            qnt_parcelas = int(input("Em quantas vezes deseja parcelar? "))
+            valor_parcela = total_compra/qnt_parcelas
             print(f"Seu parcelamento ficou R$ {valor_parcela},00 em {qnt_parcelas} ")
             print("Obrigada pela preferência {}. \n Volte Sempre".format(fregues))
     elif forma_pgto == 2:

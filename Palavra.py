@@ -7,6 +7,9 @@
 
 
 #passando o nome do arquivo que deseja que seja aberto
+from re import I
+
+
 filename = 'todaspalavras.txt'
 contar = []
 #lendo um arquivo
@@ -17,5 +20,6 @@ with open(filename,'r', encoding='utf-8') as arquivo:
 
 print("Eu consegui contar as", len(contar), "palavras via Python")
 
-    if palavra  "C":
-        palavra.append(palavra.strip())
+for palavra in contar:
+    letra_inicial = re.findall(r'\b(c[a,z]\b', text, re.I)
+    print(letra_inicial)
