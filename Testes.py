@@ -1,9 +1,12 @@
+from tkinter.tix import InputOnly
+
+
 class Cachorro:
     def __init__(self, nome, peso, cidade):
         self.nome = nome
         self.peso = peso
         self.cidade = cidade
-        self.categoria_peso = self.classifica_peso()
+        self.classifica_peso()
     
     def classifica_peso(self):
         peso = self.peso
@@ -13,6 +16,14 @@ class Cachorro:
             self.categoria_peso = 'medio'
         else:
             self.categoria_peso = 'grande'
+    
+    def emagrecer(self, kilos)   :
+        self.peso = self.peso - kilos  
+        self.classifica_peso()
+
+    def engordar(self, kilos)   :
+        self.peso = self.peso + kilos  
+        self.classifica_peso()        
 
 nome = input("digite um nome:")
 x = Cachorro(nome, 5 , 'Londres')
@@ -52,16 +63,21 @@ def classifica_peso(cachorro):
         cachorro['categoria_peso'] = 'grande'
 
     return cachorro
+
     
 
-print(meu_cachorro['categoria_peso'])
+
+print(x.categoria_peso)
 apresenta_cachorro(meu_cachorro)
-meu_cachorro = classifica_peso(meu_cachorro)
-print(meu_cachorro['categoria_peso'])
 
-meu_cachorro['peso'] += 10
-meu_cachorro = classifica_peso(meu_cachorro)
-print(meu_cachorro['categoria_peso'])
+kilos = int(input("Qntos quilos deseja emagrecer: "))
+x.emagrecer(kilos)
+print(x.emagrecer)
+print(kilos)
 
+kilos = int(input("Qntos quilos deseja engordar: "))
+z = Cachorro
+print(kilos)
+print(z.engordar)
 
 
