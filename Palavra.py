@@ -67,10 +67,18 @@ def contar_letras_meu_nome(contar):
                     arquivo_nome.write(palavra)
                     arquivo_nome.write("\n")
 
+def palavra_palindromo(contar):
+     with open("palavras_palindromos.txt", "w") as arquivo_palindromo:
+        for palavra in contar:
+            if palavra.strip() == palavra.strip()[::-1]:
+                arquivo_palindromo.write(palavra)
+                arquivo_palindromo.write("\n")
+
 
 #imprimindo os resultados
 contar_letras_inicio_meu_nome(contar, iniciais="CEC")
 contar_letras_meu_nome(contar)
+palavra_palindromo(contar)
 qnt_palavras = contar_todas_palavras(contar)
 qnt_letras = contar_letras_alfabeto(contar)
 qnt_letras_inicial = contar_letras_inicio(contar)
