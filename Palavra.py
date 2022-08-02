@@ -5,12 +5,12 @@
     ##xponteiro.write(nome)
     ##xponteiro.write("\n")
 
-#ok  Conte quantas palavras há no arquivo
-#ok Conte quantas vezes cada letra do alfabeto aparece no arquivo
-#ok Conte quantas palavras começam com cada letra do alfabeto
-#ok Identifique as palavras começam com as mesmas 3 letras do seu nome e salve-as num arquivo separado
-#ok Identifique as palavras que possuem todas as letras do seu nome e salve-as num arquivo separado
-#Identifique todas as palavras que são palíndromos e salve-as num arquivo separado
+#ok - Conte quantas palavras há no arquivo
+#ok - Conte quantas vezes cada letra do alfabeto aparece no arquivo
+#ok - Conte quantas palavras começam com cada letra do alfabeto
+#ok - Identifique as palavras começam com as mesmas 3 letras do seu nome e salve-as num arquivo separado
+#ok - Identifique as palavras que possuem todas as letras do seu nome e salve-as num arquivo separado
+#ok - Identifique todas as palavras que são palíndromos e salve-as num arquivo separado
 
 #passando o nome do arquivo que deseja que seja aberto
 from re import I
