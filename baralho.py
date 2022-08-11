@@ -12,6 +12,25 @@
 #Um método devolver_carta, que recebe uma Carta como entrada e a insere novamente na lista cartas em uma posição aleatória
 
 class Carta:
-    
+    naipe = ["ouros", "copas", "espadas", "paus"]
+    valor = {"A": 1, 
+             "2": 2, 
+             "3": 3, 
+             "4": 4, 
+             "5": 5,
+             "6": 6, 
+             "7": 7, 
+             "8": 8, 
+             "9": 9,
+            "10": 10, 
+             "Q": 11,
+             "J": 12 ,
+             "K": 13 }
+  #(__gt__, __lt__, __eq__)
 
 class Baralho:
+  def embaralhar():
+
+  def dar_carta():
+  
+  def devolver_carta():

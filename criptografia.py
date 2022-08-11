@@ -10,3 +10,55 @@
  #- DESAFIO: Cifra por palavra-chave (Cifra de Vigenère)
    #- Atenção, este desafio é BEM DESAFIADOR. Só se arrisque aqui depois que estiver confortável com as outras etapas.
    #- Como a explicação é longa, vamos adicionar um elemento de dificuldade e deixar um link com a explicação
+
+from msilib.schema import Class
+
+class CriptoMachin:
+  
+  def criptografia(self, palavra):
+    palavra_codificada = ""
+
+    for letra in palavra:
+      if letra in letras_mapeadas:
+        letra_codificada = letras_mapeadas[letra]
+
+        palavra_codificada = palavra_codificada + letra_codificada
+
+      else:
+        palavra_codificada = palavra_codificada + letra
+
+    return palavra_codificada
+
+  def descriptografa(self, palavra):
+    palavra = self.criptografia(palavra) 
+    palavra_descodificada = ""
+    for letra in palavra:
+      if letra == "4":
+        palavra_descodificada = palavra_descodificada + "A"
+
+      elif letra == "3":
+        palavra_descodificada = palavra_descodificada + "E"
+
+      elif letra == "5":
+        palavra_descodificada = palavra_descodificada + "S"
+
+      else:
+        palavra_descodificada = palavra_descodificada + letra
+
+    return palavra_descodificada
+
+letras_mapeadas = {
+  "A" : "4",
+  "E" : "3",
+  "S" : "5"
+}
+
+palavra = input("Digite uma palavra: ").upper()
+
+CriptoMachin = CriptoMachin()
+
+palavra_criptografada = CriptoMachin.criptografia(palavra)
+print(f"A palavra criptografada é: {palavra_criptografada}")
+
+palavra_descriptografada = CriptoMachin.descriptografa(palavra)
+print(f"A palavra descriptografada é: {palavra_descriptografada}")
