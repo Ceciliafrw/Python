@@ -14,11 +14,14 @@ class VetorNaoOrdenado:
                print(i, "-", self.valores[i])
     
     def insere(self, valor):
-        if self.ultima_posicao == self.capacidade - 1:
-            print("Capacidade máxima atingida")
+        if self.duplicata(valor) is True:
+            breakpoint
         else:
-            self.ultima_posicao = self.ultima_posicao + 1
-            self.valores[self.ultima_posicao] = valor
+            if self.ultima_posicao == self.capacidade - 1:
+                print("Capacidade máxima atingida")
+            else:
+                self.ultima_posicao = self.ultima_posicao + 1
+                self.valores[self.ultima_posicao] = valor
 
     def pesquisa(self, valor):
         for i in range(self.ultima_posicao+1):
@@ -34,6 +37,15 @@ class VetorNaoOrdenado:
             for i in range(posicao, self.ultima_posicao):
                 self.valores[i] = self.valores[i + 1]
             self.ultima_posicao = self.ultima_posicao - 1
+    
+    def duplicata(self, valor):
+        posicao = 0
+        for i in range(posicao, self.ultima_posicao):
+            posicao = i
+            if valor == self.valores[i]:
+                print("Valor duplicado")
+                break
+
 
 vetor = VetorNaoOrdenado(8)
 vetor.imprime()

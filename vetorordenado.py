@@ -1,4 +1,5 @@
 #implementar classe Vetores Ordenados
+import random
 
 class VetorOrdenado:
     def __init__(self, capacidade):
@@ -14,29 +15,51 @@ class VetorOrdenado:
                print(i, "-", self.valores[i])
 
     def insere(self, valor):
-        if self.ultima_posicao == self.capacidade - 1:
-            print("Capacidade máxima atingida")
-            return
-
-        posicao = 0
-        for i in range(self.ultima_posicao + 1):
-            posicao = i
-            if self.valores[i] >= valor:
-                break
-            if i == self.ultima_posicao:
-                posicao = i + 1
-
-        x = self.ultima_posicao
-        while x > posicao:
-            self.valores[x + 1] = self.valores[x]
-            x = x - 1
+        if self.duplicata(valor) is True:
+            breakpoint
         
-        self.valores[posicao] = valor
-        self.ultima_posicao = self.ultima_posicao + 1
+        else:
+            
+            if self.ultima_posicao == self.capacidade - 1:
+                print("Capacidade máxima atingida")
+                return
+            posicao = 0
+            for i in range(self.ultima_posicao + 1):
+                posicao = i
+                if self.valores[i] >= valor:
+                    break
+                if i == self.ultima_posicao:
+                        posicao = i + 1
 
-vetor = VetorOrdenado(8)   
+            x = self.ultima_posicao
+            while x > posicao:
+                self.valores[x + 1] = self.valores[x]
+                x = x - 1
+                
+            self.valores[posicao] = valor
+            self.ultima_posicao = self.ultima_posicao + 1
+
+    
+    def duplicata(self, valor):
+        posicao = 0
+        for i in range(posicao, self.ultima_posicao):
+            posicao = i
+            if valor == self.valores[i]:
+                print(f"{i} - Valor duplicado")
+                break
+                
+           
+
+vetor = VetorOrdenado(8)
 
 vetor.insere(2)
-vetor.insere(5)
 vetor.insere(3)
+vetor.insere(6)
+vetor.insere(7)
+vetor.insere(8)
+vetor.insere(9)
+vetor.imprime()
+print("==========")
+vetor.duplicata(6)
+print("==========")
 vetor.imprime()
