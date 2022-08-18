@@ -12,8 +12,15 @@
 #Um método devolver_carta, que recebe uma Carta como entrada e a insere novamente na lista cartas em uma posição aleatória
 
 class Carta:
-    naipe = ["ouros", "copas", "espadas", "paus"]
-    valor = {"A": 1, 
+    __naipe = ["ouros", "copas", "espadas", "paus"]
+    __naipes_unicode = {
+                        "ouros"   :"\u2666",
+                        "copas"   :"\u2665", 
+                        "espadas" :"\u2660",
+                        "paus"    :"\u2663"
+                        }
+    __carta = ["A","2","3","4","5","6","7","8","9","10","Q","J","K"]
+    __valor_carta = {"A": 1, 
              "2": 2, 
              "3": 3, 
              "4": 4, 
@@ -26,11 +33,47 @@ class Carta:
              "Q": 11,
              "J": 12 ,
              "K": 13 }
-  #(__gt__, __lt__, __eq__)
+ 
+    def __init__(self, naipe, valor):
+      #self.valida_carta(naipe, valor)
+      self.naipe = naipe
+      self.valor = valor
+
+    def valida_carta(self):
+      
+      if self.valor not in self.__valor_carta: 
+        print("Valor não é de uma carta.")
+        breakpoint
+
+        if self.naipe not in self.__naipe:
+          print("Valor não é de um naipe.")
+          breakpoint
+
+        return True
+    
+    def mostrar(self): 
+        if self.valida_carta() is True:
+          breakpoint
+
+        else:
+          naipe_unicode = self.__naipes_unicode[self.naipe]
+          print(f"{naipe_unicode}\n{self.valor} ")
 
 class Baralho:
-  def embaralhar():
-
-  def dar_carta():
+  cartas = Carta()
   
-  def devolver_carta():
+  def __init__(self) -> None:
+    naipe_unicode = cartas.Carta__naipes_unicode[cartas._Carta__naipe]
+    for naipe in cartas._Carta__naipes_unicode:
+      for valor in self.__cartas:
+        print(f"{naipe_unicode}\n{self.valor} ")
+
+
+  def embaralhar(self.Carta):
+
+  #   def dar_carta():
+    
+  #   def devolver_carta():
+
+#carta = Carta("copas", "B")
+#carta.mostrar()
