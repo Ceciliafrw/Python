@@ -20,9 +20,6 @@ class Fila:
                 for i in range(self.inicio,self.final + 1):
                     print(i, "-", self.valores[i])
 
-
-
-
     def enfileirar(self, valor):
         # self.final += 1
         # self.valores[self.final] = valor
