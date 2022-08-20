@@ -17,26 +17,28 @@ def Jogo_Par_Impar():
         jogador_validado = valida_jogador(jogador)
         computador = randint(0,5)
         total = jogador_validado  + computador
-        tipo_p = par_impar()
+        tipo = str(input("Escolha Par ou Ímpar (P/I): ")).strip().upper()[0]
+        par_impar(tipo)
         print(f"Você jogou {jogador_validado} e o computador jogou {computador} total {total}")
-        ganhador(total, tipo_p)
-        return total
+        ganhador(total, tipo)
+        
+        return total, tipo
 
-def par_impar():
-    tipo = str(input("Escolha Par ou Ímpar (P/I): ")).strip().upper()[0]
+def par_impar(tipo):
+    
     while tipo not in "PI":
         total = Jogo_Par_Impar()
         if total % 2 == 0:
-            tipo = print("Deu Par")
+            tipo = "P"
+            print("Deu par")
         else:
-            tipo = print("Deu Ímpar")
+            print("Deu Ímpar")
+            tipo = "I"
         
         return tipo
    
 def ganhador(total, tipo):
     vitoria = 0
-    tipo = par_impar(tipo)
-
     if tipo == "P":
         if total % 2 == 0:
             print("Você Ganhou!")
@@ -56,5 +58,7 @@ def ganhador(total, tipo):
         print("Vamos jogar denovo!")
     print(f"GAME OVER! Você venceu {vitoria} vezes")
 
-
-Jogo_Par_Impar()
+contador = 0
+while contador == 5:
+    Jogo_Par_Impar()
+    contador += 1
