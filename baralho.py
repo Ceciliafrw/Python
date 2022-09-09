@@ -10,6 +10,8 @@
 #Um método embaralhar, que embaralha a ordem da lista cartas (para isso talvez você queira voltar pacote random e dar uma procurada. Lembre que embaralhar em inglês é shuffle)
 #Um método dar_carta, que retorna a última carta da lista cartas. Essa carta deve ser removida do baralho durante a execução desse método
 #Um método devolver_carta, que recebe uma Carta como entrada e a insere novamente na lista cartas em uma posição aleatória
+from ast import Import
+import random
 
 class Carta:
     __naipe = ["ouros", "copas", "espadas", "paus"]
@@ -60,20 +62,25 @@ class Carta:
           print(f"{naipe_unicode}\n{self.valor} ")
 
 class Baralho:
-  cartas = Carta()
-  
-  def __init__(self) -> None:
-    naipe_unicode = cartas.Carta__naipes_unicode[cartas._Carta__naipe]
-    for naipe in cartas._Carta__naipes_unicode:
-      for valor in self.__cartas:
-        print(f"{naipe_unicode}\n{self.valor} ")
+  Carta = Carta("A","ouros")
+  def __init__(self):
+    naipe_unicode = Carta.__naipes_unicode
+    cartas = Carta.__carta
+    for naipe in naipe_unicode:
+      for valor in cartas:
+        print(f"{naipe}\n{valor} ")
 
 
-  def embaralhar(self.Carta):
+  #def embaralhar(self.Carta):
 
-  #   def dar_carta():
-    
+  def dar_carta():
+    naipe = random.choice(Carta.__naipes_unicode)
+    carta = random.choice(Carta.__carta)
+    print(naipe, carta)
+
   #   def devolver_carta():
 
 #carta = Carta("copas", "B")
 #carta.mostrar()
+
+Baralho.dar_carta()
