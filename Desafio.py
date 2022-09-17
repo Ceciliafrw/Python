@@ -6,6 +6,7 @@ import socket
 UDP_IP = "127.0.0.1"
 UDP_PORT = 7777
 
+
 data = b'Boa noite. Aula top'
 key = b64decode('ABEiM0RVZneImQARIjNEVQ==')
 
