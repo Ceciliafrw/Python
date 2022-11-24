@@ -4,7 +4,7 @@ from base64 import b64decode
 
 from Crypto.Cipher import AES
 
-json_input='{"iv": "OvPsyJC8DQ0bggJ5q/o34A==", "ciphertext": "8RfBOUXPaCyQGHaJ7OYndA=="}'
+json_input='{"iv":"flu36A9Ai3SdxSL8n+b7Ig==", "ciphertext": "ZV0DgMBd5X/lJYxMeTOBXqU2BQuDQOT7+bHu9H1xoE98"}'
 
 key = b64decode('ABEiM0RVZneImQARIjNEVQ==')
 

@@ -58,7 +58,7 @@ def ganhador(total, tipo):
         print("Vamos jogar denovo!")
     print(f"GAME OVER! Você venceu {vitoria} vezes")
 
-contador = 0
-while contador == 5:
-    Jogo_Par_Impar()
-    contador += 1
+#contador = 0
+#while contador == 5:
+Jogo_Par_Impar()
+    #contador += 1

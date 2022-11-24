@@ -7,7 +7,7 @@ TCP_porta = 5002
 
 servidor_TCP = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 servidor_TCP.bind((TCP_ip, TCP_porta))
-servidor_TCP.listen(5)
+servidor_TCP.listen(5002)
 
 print('Escutando %s:%d'%(TCP_ip, TCP_porta))
 
